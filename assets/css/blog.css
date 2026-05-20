@@ -1,0 +1,52 @@
+
+/* =========================================================
+   1. PAGINATION
+   ========================================================= */
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 30px 0;
+}
+
+.pagination button {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+}
+
+.pagination button.active {
+  background: #007BFF;
+  color: white;
+}
+
+/* =========================================================
+   2. RELATED POSTS
+   ========================================================= */
+
+#related-posts {
+  margin: 15px 0;
+  padding-left: 18px; /* controla o recuo */
+  text-align: left;
+}
+
+#related-posts li {
+  margin-bottom: 0px; /* menos espaço entre itens */
+  line-height: 1.4;   /* reduz altura da linha */
+}
+
+#related-posts a {
+  font-size: 14px; /* opcional: ligeiramente menor */
+  text-decoration: none;
+  color: #007BFF;
+}
+
+#related-posts a:hover {
+  text-decoration: underline;
+}
+
+.post {
+  display: none;
+}

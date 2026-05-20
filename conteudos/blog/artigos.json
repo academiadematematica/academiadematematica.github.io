@@ -1,0 +1,116 @@
+[
+  {
+    "titulo": "Porque esqueces tudo o que estudas Matemática (e como evitar)",
+    "descricao": "Descobre porque esqueces rapidamente a matéria de Matemática e aprende estratégias práticas para melhorar a memória e a retenção no estudo.",
+    "slug": "porque-esqueces-o-que-estudas-matematica",
+    "keywords": ["esquecer matemática", "memória matemática", "como memorizar matemática", "retenção estudo matemática", "estudar matemática eficazmente", "aprendizagem matemática", "explicações matemática", "memorização matemática"]
+  },
+  {
+    "titulo": "Como escolher um bom explicador de Matemática",
+    "descricao": "Descobre como escolher um bom explicador de Matemática, quais os erros a evitar e os critérios que realmente fazem diferença nos resultados.",
+    "slug": "como-escolher-um-bom-explicador-de-matematica",
+    "keywords": ["explicador matemática", "explicações matemática", "ensino matemática", "apoio escolar matemática", "matemática", "ensino", "aprendizagem", "explicador"]
+  },
+  {
+    "titulo": "O que é um limite (explicação simples)",
+    "descricao": "Explicação simples e clara do conceito de limite em Matemática, com exemplos e erros comuns para ajudar a compreender este tema fundamental.",
+    "slug": "o-que-e-um-limite-explicacao-simples",
+    "keywords": ["limites matemática", "explicações matemática", "aprender limites", "ensino matemática", "matemática", "limites", "aprendizagem", "ensino"]
+  },
+  {
+    "titulo": "O erro mais perigoso em probabilidades",
+    "descricao": "Descobre o erro mais comum e perigoso em probabilidades e aprende como evitá-lo para melhorar resultados em testes e exames de Matemática.",
+    "slug": "erro-mais-perigoso-probabilidades",
+    "keywords": ["probabilidades matemática", "explicações matemática", "ensino probabilidades", "aprender probabilidades", "matemática", "probabilidades", "ensino", "aprendizagem"]
+  },
+  {
+    "titulo": "Porque a tua intuição falha em Matemática",
+    "descricao": "Descobre porque a intuição pode levar a erros em Matemática e como substituir esse padrão por um método eficaz para melhorar resultados.",
+    "slug": "porque-a-tua-intuicao-falha-em-matematica",
+    "keywords": ["erros matemática", "explicações matemática", "ensino matemática", "aprender matemática", "matemática", "intuição", "aprendizagem", "ensino"]
+  },
+  {
+    "titulo": "Quantas horas de explicações são necessárias",
+    "descricao": "Explicação clara sobre quantas horas de explicações de Matemática são realmente necessárias, dependendo do nível do aluno, objetivos e método de estudo.",
+    "slug": "quantas-horas-de-explicacoes-sao-necessarias",
+    "keywords": ["explicações matemática", "apoio escolar matemática", "ensino matemática", "aprender matemática", "matemática", "explicações", "ensino", "aprendizagem"]
+  },
+  {
+    "titulo": "Como estudar Matemática corretamente",
+    "descricao": "Estratégias práticas e eficazes para estudar Matemática corretamente, evitar erros comuns e melhorar resultados de forma consistente.",
+    "slug": "como-estudar-matematica-corretamente",
+    "keywords": ["estudar matemática", "explicações matemática", "ensino matemática", "aprendizagem matemática", "matemática", "estudo", "ensino", "aprendizagem"]
+  },
+  {
+    "titulo": "Porque é que percebo nas aulas mas falho nos testes?",
+    "descricao": "Explicação das principais razões pelas quais muitos alunos percebem a matéria nas aulas mas falham nos testes, e o que fazer para corrigir isso.",
+    "slug": "porque-e-que-percebo-nas-aulas-mas-falho-nos-testes",
+    "keywords": ["falhar testes matemática", "explicações matemática", "ensino matemática", "aprendizagem matemática", "matemática", "testes", "ensino", "aprendizagem"]
+  },
+  {
+    "titulo": "Quanto custam explicações de Matemática?",
+    "descricao": "Descobre quanto custam explicações de matemática, os preços por hora e o que realmente influencia o valor.",
+    "slug": "quanto-custam-explicacoes-matematica",
+    "keywords": ["preço explicações matemática", "explicações matemática", "explicador matemática", "ensino matemática", "matemática", "preço", "explicações", "ensino"]
+  },
+  {
+    "titulo": "Matemática: talento ou treino?",
+    "descricao": "Será que matemática é uma questão de talento ou pode ser aprendida com treino? Uma análise clara e realista sobre o que realmente faz diferença.",
+    "slug": "matematica-talento-ou-treino",
+    "keywords": ["aprender matemática", "explicações matemática", "ensino matemática", "treino matemática", "matemática", "talento", "ensino", "aprendizagem"]
+  },
+  {
+    "titulo": "O que é uma derivada? Explicação simples para perceber de verdade (sem fórmulas complicadas)",
+    "descricao": "Explicação intuitiva do conceito de derivada, ideal para quem procura entender o que é derivada pela primeira vez.",
+    "slug": "o-que-e-uma-derivada-explicacao-simples",
+    "keywords": ["derivada matemática", "explicações matemática", "ensino derivadas", "aprender derivadas", "matemática", "derivada", "ensino", "aprendizagem"]
+  },
+  {
+    "titulo": "Funções no Exame Nacional explicadas de forma simples",
+    "descricao": "Explicação clara e prática das funções mais importantes para o Exame Nacional de Matemática A, com exemplos e estratégias de resolução.",
+    "slug": "funcoes-no-exame-nacional-explicadas-de-forma-simples",
+    "keywords": ["funções matemática", "explicações matemática", "ensino funções", "aprender funções", "matemática", "funções", "ensino", "aprendizagem"]
+  },
+  {
+    "titulo": "Como acompanhar a matéria quando já estás atrasado?",
+    "descricao": "Guia prático para recuperar matéria em atraso, evitar erros comuns e voltar ao ritmo de estudo de forma eficiente.",
+    "slug": "como-acompanhar-a-materia-quando-ja-estas-atrasado",
+    "keywords": ["recuperar matemática", "explicações matemática", "ensino matemática", "aprendizagem matemática", "matemática", "recuperação", "ensino", "aprendizagem"]
+  },
+  {
+    "titulo": "Como passar no Exame Nacional de Matemática A",
+    "descricao": "Guia completo com método de estudo, erros comuns e plano de preparação para melhorar a nota no exame.",
+    "slug": "como-passar-no-exame-nacional-de-matematica-a",
+    "keywords": ["exame matemática", "explicações matemática", "ensino matemática", "aprender matemática", "matemática", "exame", "ensino", "aprendizagem"]
+  },
+  {
+    "titulo": "Como subir de 10 para 15 valores a Matemática",
+    "descricao": "Estratégias práticas para melhorar a nota a Matemática, com foco em métodos eficazes e treino adequado.",
+    "slug": "como-subir-de-10-para-15-valores-a-matematica",
+    "keywords": ["melhorar matemática", "explicações matemática", "ensino matemática", "aprendizagem matemática", "matemática", "notas", "ensino", "aprendizagem"]
+  },
+  {
+    "titulo": "Vale a pena ter explicações no secundário?",
+    "descricao": "Análise sobre quando as explicações fazem diferença no secundário e como podem ajudar a melhorar os resultados.",
+    "slug": "vale-a-pena-ter-explicacoes-no-secundario",
+    "keywords": ["explicações matemática", "ensino secundário matemática", "apoio escolar matemática", "aprender matemática", "matemática", "secundário", "ensino", "aprendizagem"]
+  },
+  {
+    "titulo": "Porque é que os alunos têm dificuldades a Matemática?",
+    "descricao": "Principais causas das dificuldades a Matemática e estratégias para ultrapassar esses obstáculos.",
+    "slug": "porque-e-que-os-alunos-tem-dificuldades-a-matematica",
+    "keywords": ["dificuldades matemática", "explicações matemática", "ensino matemática", "aprendizagem matemática", "matemática", "dificuldades", "ensino", "aprendizagem"]
+  },
+  {
+    "titulo": "Porque é que estudar muito não chega em Matemática?",
+    "descricao": "Explicação de porque estudar muito não garante bons resultados e como estudar de forma mais eficaz.",
+    "slug": "porque-e-que-estudar-muito-nao-chega-em-matematica",
+    "keywords": ["estudar matemática", "explicações matemática", "ensino matemática", "aprendizagem matemática", "matemática", "estudo", "ensino", "aprendizagem"]
+  },
+  {
+    "titulo": "Explicações de Matemática online vs presenciais",
+    "descricao": "Comparação entre explicações online e presenciais, com vantagens e desvantagens de cada formato.",
+    "slug": "explicacoes-de-matematica-online-vs-presenciais",
+    "keywords": ["explicações online matemática", "explicações presenciais matemática", "ensino matemática", "apoio escolar matemática", "matemática", "online", "ensino", "aprendizagem"]
+  }
+]

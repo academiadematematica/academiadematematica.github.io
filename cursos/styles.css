@@ -1,0 +1,325 @@
+/* ================================
+   IMPORTS
+================================ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+
+/* ================================
+   VARIABLES (DESIGN SYSTEM)
+================================ */
+:root {
+  /* Colors */
+  --primary: #0f2a43;
+  --secondary: #1fa689;
+  --accent: #2d6cdf;
+
+  --bg: #f4f6f9;
+  --card: #ffffff;
+  --text: #1b1f23;
+  --muted: #6b7280;
+
+  --border: #e5e7eb;
+  --border-light: #eef0f3;
+
+  /* Spacing */
+  --space-xs: 6px;
+  --space-sm: 10px;
+  --space-md: 20px;
+  --space-lg: 30px;
+  --space-xl: 50px;
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 14px;
+  --radius-full: 50%;
+
+  /* Shadow */
+  --shadow-soft: 0 10px 25px rgba(0,0,0,0.05);
+
+  /* Typography */
+  --font-main: "Inter", sans-serif;
+}
+
+
+/* ================================
+   RESET / BASE
+================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+
+/* ================================
+   LAYOUT
+================================ */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: var(--space-xl) var(--space-md);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+
+/* ================================
+   NAVBAR
+================================ */
+nav {
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 0;
+  position: sticky;
+  top: 0;
+}
+
+.nav-container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 var(--space-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a {
+  margin-left: 18px;
+  text-decoration: none;
+  color: var(--primary);
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+
+/* ================================
+   HERO SECTION
+================================ */
+.hero {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  
+  height: 250px;
+  padding: 0 var(--space-md);
+
+  display: flex;
+  align-items: center;
+}
+
+.hero-content {
+  max-width: 900px;
+  margin: auto;
+}
+
+.hero h1 {
+  font-size: 40px;
+  margin-bottom: var(--space-sm);
+}
+
+.hero p {
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+
+/* ================================
+   CARD COMPONENT
+================================ */
+.card {
+  background: var(--card);
+  padding: 24px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--border-light);
+}
+
+.card h2 {
+  margin-bottom: 12px;
+  font-size: 20px;
+}
+
+
+/* ================================
+   BADGE
+================================ */
+.badge {
+  display: inline-block;
+  background: #e8f0ff;
+  color: var(--secondary);
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+
+/* ================================
+   CTA (CALL TO ACTION)
+================================ */
+.cta {
+  background: var(--primary);
+  color: white;
+  padding: var(--space-lg);
+  border-radius: var(--radius-lg);
+  text-align: center;
+}
+
+.cta a {
+  display: inline-block;
+  margin-top: var(--space-sm);
+  background: white;
+  color: var(--primary);
+  padding: 10px 18px;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+
+/* ================================
+   FORM ELEMENTS
+================================ */
+input {
+  width: 100%;
+  padding: 12px;
+  margin-top: var(--space-sm);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+
+button {
+  width: 100%;
+  margin-top: var(--space-sm);
+  padding: 12px;
+  border: none;
+  background: var(--accent);
+  color: white;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1f5fd1;
+}
+
+
+/* ================================
+   PROGRAM GRID
+================================ */
+.program-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  margin-top: 15px;
+}
+
+.program-grid h3 {
+  margin-top: 15px;
+  border-left: 4px solid #b9b9b9;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  background-color: #ededed;
+}
+
+.program-grid ul {
+  padding-left: 20px;
+}
+
+
+/* ================================
+   TESTIMONIALS
+================================ */
+.testimonial-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.testimonial-photo {
+  width: 60px;
+  height: 60px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+}
+
+.testimonial-info h2 {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.testimonial-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.testimonial-age {
+  font-size: 0.9rem;
+  color: #888;
+  font-weight: normal;
+}
+
+.testimonial-year {
+  background: #e8f0ff;
+  color: var(--secondary);
+  padding: 4px 8px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+footer {
+  text-align: center;
+  padding: var(--space-lg);
+  font-size: 13px;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+  margin-top: var(--space-xl);
+}
+
+
+/* ================================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .program-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 30px;
+  }
+
+  .testimonial-info h2 {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

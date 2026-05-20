@@ -1,0 +1,80 @@
+.ad-banner {
+  width: 100%;
+  max-width: 200px;
+  margin: 0 auto;
+  position: sticky;
+  top: 20px;
+}
+
+.ad-banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.carousel {
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 1.5s ease-in-out;
+}
+
+.slide {
+  width: 100%;
+  min-width: 100%;
+  height: 100%;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.slide img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.description {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+  background: rgba(0,0,0,0.5);
+  padding: 8px;
+  border-radius: 5px;
+  opacity: 0.8;
+}
+
+.controls {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  
+  pointer-events: none; /* <- chave */
+}
+
+.controls button {
+  pointer-events: auto; /* <- os botões continuam clicáveis */
+}
+
+.carousel button {
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  opacity: 0.5;
+}
