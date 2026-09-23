@@ -5,5 +5,8 @@ window.DEFAULT_ADS = {
     ],
     right: [
         { href: "/cursos/curso-m23", img: "/assets/img/BannerCursoM23.png", alt: "Curso Maoires de 23" }
+    ],
+    left: [
+        { href: "/pagina-vendas-notacerta.html", img: "/assets/img/NotaCerta_272x948.png", alt: "Nota Certa" }
     ]
 };
