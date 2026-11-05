@@ -1,4 +1,4 @@
-/* =========================================================
+﻿/* =========================================================
    Banners promocionais próprios (não são anúncios AdSense).
    - Sidebars dos artigos: #ad-left / #ad-right (escolha aleatória)
    - Carrossel do topo: .carousel .track (atualmente desativado no HTML)

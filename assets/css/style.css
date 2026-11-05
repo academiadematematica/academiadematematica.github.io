@@ -1,4 +1,4 @@
-/* =========================================================
+﻿/* =========================================================
    ACADEMIA DE MATEMÁTICA - DESIGN SYSTEM
    ---------------------------------------------------------
    Folha única do site principal (inclui o que estava em
@@ -1637,4 +1637,284 @@ strong {
   .skip-link { display: none !important; }
 
   body { background: #fff; }
+}
+
+
+/* =========================================================
+   19. FICHAS DE EXERCÍCIOS (/conteudos/exercicios/)
+   Páginas geradas por fichas/build_fichas.py
+   ========================================================= */
+.ficha-anos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+  list-style: none;
+  margin: var(--s-5) 0 0;
+  padding: 0;
+}
+
+.ficha-anos li { margin: 0; }
+
+.ficha-card p { margin-bottom: 0; }
+
+.ficha-layout {
+  display: grid;
+  gap: var(--s-5);
+  padding-block: var(--s-6) var(--s-7);
+}
+
+@media (min-width: 1024px) {
+  .ficha-layout {
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: var(--s-7);
+  }
+}
+
+/* Índice lateral da ficha (níveis) */
+.ficha-indice {
+  padding: var(--s-4) var(--s-5);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  font-size: var(--fs-sm);
+}
+
+@media (min-width: 1024px) {
+  .ficha-indice {
+    position: sticky;
+    top: calc(var(--header-h) + var(--s-4));
+    align-self: start;
+  }
+}
+
+.ficha-indice__titulo {
+  margin-bottom: var(--s-2);
+  font-family: var(--font-head);
+  font-weight: 700;
+  color: var(--brand);
+}
+
+.ficha-indice ul {
+  list-style: none;
+  margin: 0 0 var(--s-3);
+  padding: 0;
+}
+
+.ficha-indice li + li { margin-top: var(--s-1); }
+.ficha-indice a { text-decoration: none; }
+.ficha-indice a:hover { text-decoration: underline; }
+
+.ficha-conteudo { min-width: 0; }
+
+.ficha-intro { margin-bottom: var(--s-6); }
+
+/* Níveis */
+.nivel + .nivel { margin-top: var(--s-7); }
+
+.nivel__titulo {
+  margin-bottom: var(--s-4);
+  padding-bottom: var(--s-2);
+  border-bottom: 2px solid var(--brand-100);
+  font-size: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);
+}
+
+.nivel__contexto {
+  margin-bottom: var(--s-4);
+  color: var(--muted);
+}
+
+/* Exercício */
+.exercicio {
+  padding: var(--s-5);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  scroll-margin-top: calc(var(--header-h) + var(--s-4));
+}
+
+.exercicio + .exercicio,
+.nivel__contexto + .exercicio,
+.exercicio + .nivel__contexto { margin-top: var(--s-4); }
+
+.exercicio__titulo {
+  margin-bottom: var(--s-3);
+  font-size: var(--fs-base);
+  color: var(--action);
+}
+
+.exercicio__enunciado > :last-child,
+.resolucao__corpo > :last-child { margin-bottom: 0; }
+
+/* Alíneas (5.1., 5.1.1., ...) */
+ol.alineas {
+  list-style: none;
+  margin: var(--s-3) 0 0;
+  padding-left: 0;
+}
+
+ol.alineas ol.alineas { padding-left: var(--s-5); }
+
+ol.alineas > li + li { margin-top: var(--s-3); }
+
+.alinea-num {
+  font-weight: 700;
+  color: var(--action);
+  white-space: nowrap;
+}
+
+/* Escolha múltipla */
+ol.opcoes {
+  display: grid;
+  gap: var(--s-2) var(--s-5);
+  list-style: none;
+  margin: var(--s-3) 0;
+  padding: 0;
+}
+
+@media (min-width: 640px) {
+  ol.opcoes:not(.opcoes--linha) { grid-template-columns: 1fr 1fr; }
+}
+
+ol.opcoes li { margin: 0; }
+
+.opcao-letra {
+  margin-right: var(--s-1);
+  font-weight: 700;
+}
+
+.calc-nota {
+  margin: var(--s-2) 0 0;
+  font-size: var(--fs-sm);
+  font-style: italic;
+  color: var(--muted);
+  text-align: right;
+}
+
+/* Figuras (SVG gerado a partir do TikZ) */
+.ex-fig {
+  margin: var(--s-4) 0;
+  text-align: center;
+}
+
+.ex-fig img {
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Tabelas */
+.table-wrap {
+  max-width: 100%;
+  margin: var(--s-3) 0;
+  overflow-x: auto;
+}
+
+.exercicio table,
+.nivel__contexto table,
+.ficha-intro table {
+  border-collapse: collapse;
+  font-size: var(--fs-sm);
+}
+
+.exercicio th,
+.exercicio td,
+.nivel__contexto th,
+.nivel__contexto td {
+  padding: var(--s-2) var(--s-3);
+  border: 1px solid var(--border);
+  font-weight: 400;
+}
+
+.exercicio thead th,
+.nivel__contexto thead th { background: var(--bg); }
+
+.exercicio .center,
+.nivel__contexto .center { text-align: center; }
+
+.exercicio .center .table-wrap { display: flex; justify-content: center; }
+
+.exercicio pre {
+  margin: var(--s-3) 0;
+  padding: var(--s-3) var(--s-4);
+  overflow-x: auto;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-sm);
+}
+
+/* Fórmulas: evitar overflow em ecrãs pequenos */
+.exercicio .katex-display {
+  margin: var(--s-3) 0;
+  padding-block: var(--s-1);
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.exercicio .katex { font-size: 1.08em; }
+
+/* Resolução (fechada por defeito) */
+.resolucao {
+  margin-top: var(--s-4);
+  border-top: 1px dashed var(--border);
+  padding-top: var(--s-3);
+}
+
+.resolucao summary {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  min-height: 44px;
+  padding: 0 var(--s-4);
+  border: 1px solid var(--action);
+  border-radius: var(--radius);
+  color: var(--action);
+  font-weight: 650;
+  cursor: pointer;
+  list-style: none;
+}
+
+.resolucao summary::-webkit-details-marker { display: none; }
+
+.resolucao summary::after {
+  content: "+";
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.resolucao[open] summary::after { content: "−"; }
+.resolucao summary:hover { background: var(--action-50); }
+
+.resolucao__corpo {
+  margin-top: var(--s-4);
+  padding: var(--s-4) var(--s-5);
+  background: var(--bg);
+  border-radius: var(--radius);
+}
+
+.res-desc {
+  font-size: var(--fs-sm);
+  color: var(--muted);
+}
+
+.res-estr {
+  font-size: var(--fs-sm);
+  color: var(--muted);
+}
+
+.res-resp {
+  margin: var(--s-3) 0;
+  padding: var(--s-3) var(--s-4);
+  background: var(--action-50);
+  border-left: 4px solid var(--action);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.res-resp > p:last-child { margin-bottom: 0; }
+
+@media print {
+  .ficha-indice,
+  .resolucao summary { display: none !important; }
+  .exercicio { box-shadow: none; break-inside: avoid; }
 }

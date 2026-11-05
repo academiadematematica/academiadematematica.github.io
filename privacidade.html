@@ -91,7 +91,7 @@
       <a class="brand" href="/">
         <picture>
           <source srcset="/assets/img/logo-header.webp" type="image/webp">
-          <img src="/assets/img/Logo.png" alt="Academia de Matemática - página inicial" width="155" height="56">
+          <img src="/assets/img/logo-header.png" alt="Academia de Matemática - página inicial" width="155" height="56">
         </picture>
       </a>
 
@@ -131,7 +131,17 @@
             </ul>
           </li>
 
-          <li><a href="/conteudos/blog/">Blog</a></li>
+          <li class="has-sub">
+            <a href="/conteudos/">Conteúdos</a>
+            <button class="sub-toggle" type="button" aria-expanded="false" aria-controls="sub-conteudos">
+              <svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#chevron-down"></use></svg>
+              <span class="sr-only">Mostrar submenu Conteúdos</span>
+            </button>
+            <ul id="sub-conteudos" class="sub-menu">
+              <li><a href="/conteudos/exercicios/">Fichas de exercícios</a></li>
+              <li><a href="/conteudos/blog/">Blog</a></li>
+            </ul>
+          </li>
           <!-- soon <li><a href="/loja/">Loja</a></li> -->
           <li><a href="/contacto.html">Contacto</a></li>
           <li class="site-nav__cta"><a class="btn btn--primary btn--sm" href="/explicacoes/marcar.html">Marcar explicação</a></li>
@@ -196,7 +206,7 @@
           <li><strong>Formspree</strong>: receção e encaminhamento dos formulários. A empresa está sediada nos Estados Unidos, pelo que os dados podem ser transferidos para fora da União Europeia.</li>
           <li><strong>Google (Gmail)</strong>: receção das mensagens por email.</li>
           <li><strong>GitHub Pages</strong>: alojamento do site; como qualquer servidor, regista dados técnicos de acesso (por exemplo, o endereço IP).</li>
-          <li><strong>Google Fonts</strong> e <strong>jsDelivr</strong>: fornecimento de tipos de letra e da biblioteca de fórmulas matemáticas; o teu navegador liga-se a estes serviços e transmite o endereço IP.</li>
+          <li><strong>Google Fonts</strong>: fornecimento de tipos de letra; o teu navegador liga-se a este serviço e transmite o endereço IP.</li>
           <li><strong>Hotmart</strong>: pagamento de produtos digitais (apenas se decidires comprar; os dados de pagamento são tratados diretamente pela Hotmart).</li>
         </ul>
         <p>Cada um destes serviços tem a sua própria política de privacidade.</p>
@@ -273,7 +283,7 @@
         <p class="site-footer__title">Academia</p>
         <ul>
           <li><a href="/cursos/">Cursos</a></li>
-          <li><a href="/conteudos/">Conteúdos gratuitos</a></li>
+          <li><a href="/conteudos/exercicios/">Fichas de exercícios</a></li>
           <li><a href="/conteudos/blog/">Blog</a></li>
           <li><a href="/contacto.html">Contacto</a></li>
           <li><a href="/privacidade.html">Política de privacidade</a></li>

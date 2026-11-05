@@ -1,4 +1,4 @@
-/* Banners promocionais por defeito (ver /assets/js/banners.js).
+﻿/* Banners promocionais por defeito (ver /assets/js/banners.js).
    width/height evitam saltos de layout (CLS) enquanto a imagem carrega. */
 window.DEFAULT_ADS = {
   top: [
