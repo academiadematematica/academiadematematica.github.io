@@ -7,26 +7,6 @@
   </url>
 
   <url>
-    <loc>https://academiadematematica.github.io/</loc>
-    <lastmod>2026-11-05</lastmod>
-  </url>
-
-  <url>
-    <loc>https://academiadematematica.github.io/pagina-vendas-notacerta.html</loc>
-    <lastmod>2026-11-05</lastmod>
-  </url>
-
-  <url>
-    <loc>https://academiadematematica.github.io/privacidade.html</loc>
-    <lastmod>2026-11-05</lastmod>
-  </url>
-
-  <url>
-    <loc>https://academiadematematica.github.io/conteudos/</loc>
-    <lastmod>2026-11-05</lastmod>
-  </url>
-
-  <url>
     <loc>https://academiadematematica.github.io/conteudos/blog/como-acompanhar-a-materia-quando-ja-estas-atrasado.html</loc>
     <lastmod>2026-11-05</lastmod>
   </url>
@@ -77,12 +57,12 @@
   </url>
 
   <url>
-    <loc>https://academiadematematica.github.io/conteudos/blog/o-que-e-um-limite-explicacao-simples.html</loc>
+    <loc>https://academiadematematica.github.io/conteudos/blog/o-que-e-uma-derivada-explicacao-simples.html</loc>
     <lastmod>2026-11-05</lastmod>
   </url>
 
   <url>
-    <loc>https://academiadematematica.github.io/conteudos/blog/o-que-e-uma-derivada-explicacao-simples.html</loc>
+    <loc>https://academiadematematica.github.io/conteudos/blog/o-que-e-um-limite-explicacao-simples.html</loc>
     <lastmod>2026-11-05</lastmod>
   </url>
 
@@ -123,11 +103,6 @@
 
   <url>
     <loc>https://academiadematematica.github.io/conteudos/blog/vale-a-pena-ter-explicacoes-no-secundario.html</loc>
-    <lastmod>2026-11-05</lastmod>
-  </url>
-
-  <url>
-    <loc>https://academiadematematica.github.io/conteudos/exercicios/</loc>
     <lastmod>2026-11-05</lastmod>
   </url>
 
@@ -237,7 +212,12 @@
   </url>
 
   <url>
-    <loc>https://academiadematematica.github.io/cursos/</loc>
+    <loc>https://academiadematematica.github.io/conteudos/exercicios/</loc>
+    <lastmod>2026-11-05</lastmod>
+  </url>
+
+  <url>
+    <loc>https://academiadematematica.github.io/conteudos/</loc>
     <lastmod>2026-11-05</lastmod>
   </url>
 
@@ -273,6 +253,11 @@
 
   <url>
     <loc>https://academiadematematica.github.io/cursos/exame-nacional-mat-a/inscricao.html</loc>
+    <lastmod>2026-11-05</lastmod>
+  </url>
+
+  <url>
+    <loc>https://academiadematematica.github.io/cursos/</loc>
     <lastmod>2026-11-05</lastmod>
   </url>
 
@@ -313,6 +298,21 @@
 
   <url>
     <loc>https://academiadematematica.github.io/explicacoes/universidade.html</loc>
+    <lastmod>2026-11-05</lastmod>
+  </url>
+
+  <url>
+    <loc>https://academiadematematica.github.io/</loc>
+    <lastmod>2026-11-05</lastmod>
+  </url>
+
+  <url>
+    <loc>https://academiadematematica.github.io/pagina-vendas-notacerta.html</loc>
+    <lastmod>2026-11-05</lastmod>
+  </url>
+
+  <url>
+    <loc>https://academiadematematica.github.io/privacidade.html</loc>
     <lastmod>2026-11-05</lastmod>
   </url>
 
