@@ -1,4 +1,4 @@
-﻿def f(x):
+def f(x):
     return x**5 - 3*x**2 + 1
 
 def df(x):

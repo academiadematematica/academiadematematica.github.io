@@ -1,4 +1,4 @@
-﻿import random
+import random
 import statistics
 
 mu = 50

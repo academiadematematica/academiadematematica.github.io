@@ -1,4 +1,4 @@
-﻿def f(x):
+def f(x):
     return 3**x + x - 3
 
 a = 0

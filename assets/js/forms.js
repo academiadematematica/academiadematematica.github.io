@@ -1,4 +1,4 @@
-﻿/* =========================================================
+/* =========================================================
    Envio de formulários (Formspree) - substitui os três
    ficheiros sendmessage.js anteriores.
 

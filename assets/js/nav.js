@@ -1,4 +1,4 @@
-﻿/* =========================================================
+/* =========================================================
    Navegação principal
    - Menu mobile com botão (aria-expanded)
    - Submenus abrem por clique/teclado (não só por hover)

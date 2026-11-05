@@ -1,4 +1,4 @@
-﻿/* =========================================================
+/* =========================================================
    Paginação da lista de artigos do blog.
    A lista completa já vem no HTML (gerada por blog/build.py),
    o que é bom para SEO; este script mostra 6 artigos por página.
