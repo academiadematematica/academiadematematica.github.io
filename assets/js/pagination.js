@@ -1,94 +1,97 @@
+/* =========================================================
+   Paginação da lista de artigos do blog.
+   A lista completa já vem no HTML (gerada por blog/build.py),
+   o que é bom para SEO; este script mostra 6 artigos por página.
+   ========================================================= */
+(function () {
+  'use strict';
 
-const postsPerPage = 6;
+  var POSTS_PER_PAGE = 6;
+  var JSON_URL = '/conteudos/blog/artigos.json'; // caminho absoluto (já não há <base href>)
 
-function getCurrentPage() {
-  const params = new URLSearchParams(window.location.search);
-  return parseInt(params.get("page")) || 1;
-}
+  function escapeHTML(str) {
+    return String(str).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
 
+  function getCurrentPage(total) {
+    var page = parseInt(new URLSearchParams(location.search).get('page'), 10) || 1;
+    return Math.min(Math.max(page, 1), Math.max(total, 1));
+  }
 
-let currentPage = getCurrentPage();
+  function renderPosts(artigos, page) {
+    var container = document.getElementById('blog-list');
+    var start = (page - 1) * POSTS_PER_PAGE;
 
-let artigos = [];
+    container.innerHTML = artigos.slice(start, start + POSTS_PER_PAGE).map(function (post) {
+      var url = '/conteudos/blog/' + encodeURIComponent(post.slug) + '.html';
+      return '' +
+        '<article class="card card--link post-card">' +
+          '<h3><a class="card__title-link" href="' + url + '">' + escapeHTML(post.titulo) + '</a></h3>' +
+          '<p class="post-card__desc">' + escapeHTML(post.descricao) + '</p>' +
+          '<span class="card__footer link-arrow" aria-hidden="true">Ler artigo ' +
+            '<svg class="icon"><use href="/assets/img/icons.svg#arrow-right"></use></svg></span>' +
+        '</article>';
+    }).join('');
+  }
 
-async function loadArtigos() {
-  const res = await fetch("./conteudos/blog/artigos.json");
-  artigos = await res.json();
-}
+  function renderPagination(current, totalPages) {
+    var container = document.getElementById('pagination');
+    container.innerHTML = '';
+    if (totalPages <= 1) return;
 
-function renderPosts() {
-  const container = document.getElementById("blog-list");
-  container.innerHTML = "";
+    function addButton(page) {
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.textContent = page;
+      btn.setAttribute('aria-label', 'Página ' + page);
+      if (page === current) {
+        btn.classList.add('active');
+        btn.setAttribute('aria-current', 'page');
+      }
+      btn.addEventListener('click', function () {
+        // recarrega com ?page=N (o URL pode ser partilhado)
+        location.search = '?page=' + page;
+      });
+      container.appendChild(btn);
+    }
 
-  const start = (currentPage - 1) * postsPerPage;
-  const end = start + postsPerPage;
+    function addEllipsis() {
+      var span = document.createElement('span');
+      span.textContent = '…';
+      span.setAttribute('aria-hidden', 'true');
+      container.appendChild(span);
+    }
 
-  const posts = artigos.slice(start, end);
+    if (current > 3) {
+      addButton(1);
+      if (current > 4) addEllipsis();
+    }
 
-  posts.forEach(post => {
-    container.innerHTML += `
-      <div class="box box-grey">
-        <div class="topo">
-          <span class="titulo">${post.titulo}</span>
-        </div>
-        <div class="descricao">${post.descricao}</div>
-        <a href="/conteudos/blog/${post.slug}.html">Ler artigo</a>
-      </div>
-    `;
+    for (var i = current - 2; i <= current + 2; i++) {
+      if (i > 0 && i <= totalPages) addButton(i);
+    }
+
+    if (current < totalPages - 2) {
+      if (current < totalPages - 3) addEllipsis();
+      addButton(totalPages);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    if (!document.getElementById('blog-list')) return;
+
+    fetch(JSON_URL)
+      .then(function (res) { return res.json(); })
+      .then(function (artigos) {
+        var totalPages = Math.ceil(artigos.length / POSTS_PER_PAGE);
+        var page = getCurrentPage(totalPages);
+        renderPosts(artigos, page);
+        renderPagination(page, totalPages);
+      })
+      .catch(function () {
+        /* Se falhar, fica a lista completa gerada no HTML */
+      });
   });
-}
-
-function renderPagination(currentPage, totalPages) {
-  const container = document.getElementById("pagination");
-  container.innerHTML = "";
-
-  function addButton(page, text = page) {
-    const btn = document.createElement("button");
-    btn.textContent = text;
-    if (page === currentPage) btn.classList.add("active");
-    btn.onclick = () => goToPage(page);
-    container.appendChild(btn);
-  }
-
-  if (currentPage > 3) {
-    addButton(1);
-    if (currentPage > 4) {
-      const span = document.createElement("span");
-      span.textContent = "...";
-      container.appendChild(span);
-    }
-  }
-
-  for (let i = currentPage - 2; i <= currentPage + 2; i++) {
-    if (i > 0 && i <= totalPages) {
-      addButton(i);
-    }
-  }
-
-  if (currentPage < totalPages - 2) {
-    if (currentPage < totalPages - 3) {
-      const span = document.createElement("span");
-      span.textContent = "...";
-      container.appendChild(span);
-    }
-    addButton(totalPages);
-  }
-}
-
-function goToPage(page) {
-  currentPage = page;
-  window.location.search = "?page=" + page;
-  renderAll();
-}
-
-function renderAll() {
-  renderPosts();
-
-  const totalPages = Math.ceil(artigos.length / postsPerPage);
-  renderPagination(currentPage, totalPages);
-}
-
-document.addEventListener("DOMContentLoaded", async () => {
-  await loadArtigos();
-  renderAll();
-});
+})();

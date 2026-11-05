@@ -1,58 +1,59 @@
-document.addEventListener("DOMContentLoaded", function () {
+/* =========================================================
+   Marcação de explicações - o segundo campo ("detalhe")
+   depende do nível escolhido no primeiro ("nivel").
+   ========================================================= */
+document.addEventListener('DOMContentLoaded', function () {
+  'use strict';
 
-  const nivel = document.getElementById("nivel");
-  const detalhe = document.getElementById("detalhe");
+  var nivel = document.getElementById('nivel');
+  var detalhe = document.getElementById('detalhe');
+  if (!nivel || !detalhe) return;
 
-  const opcoes = {
+  var opcoes = {
     secundario: [
-      "10º ano",
-      "11º ano",
-      "12º ano",
-      "Preparação para exame"
+      '10.º ano',
+      '11.º ano',
+      '12.º ano',
+      'Preparação para exame'
     ],
     universitario: [
-      "Álgebra",
-      "Cálculo",
-      "Análise Matemática",
-      "Matemática Discreta",
-      "Probabilidades",
-      "Estatística",
-      "Outros"
+      'Álgebra',
+      'Cálculo',
+      'Análise Matemática',
+      'Matemática Discreta',
+      'Probabilidades',
+      'Estatística',
+      'Outros'
     ],
     maiores23: [
-      "Preparação geral",
-      "Exercícios tipo exame",
-      "Revisão de matéria base"
+      'Preparação geral',
+      'Exercícios tipo exame',
+      'Revisão de matéria base'
     ]
   };
 
-  nivel.addEventListener("change", function () {
+  function addOption(value, text) {
+    var option = document.createElement('option');
+    option.value = value;
+    option.textContent = text;
+    detalhe.appendChild(option);
+  }
 
-    const valor = this.value;
+  function update() {
+    var lista = opcoes[nivel.value];
+    detalhe.innerHTML = '';
 
-    // limpar opções
-    detalhe.innerHTML = "";
-
-    if (!valor || !opcoes[valor]) {
-      detalhe.innerHTML = '<option value="">Seleciona primeiro o nível</option>';
+    if (!lista) {
+      addOption('', 'Escolhe primeiro o nível');
+      detalhe.disabled = true;
       return;
     }
 
-    // adicionar nova lista
-    const lista = opcoes[valor];
+    addOption('', 'Escolhe uma opção');
+    lista.forEach(function (item) { addOption(item, item); });
+    detalhe.disabled = false;
+  }
 
-    const defaultOption = document.createElement("option");
-    defaultOption.value = "";
-    defaultOption.textContent = "Seleciona opção";
-    detalhe.appendChild(defaultOption);
-
-    lista.forEach(item => {
-      const option = document.createElement("option");
-      option.value = item;
-      option.textContent = item;
-      detalhe.appendChild(option);
-    });
-
-  });
-
+  nivel.addEventListener('change', update);
+  update();
 });

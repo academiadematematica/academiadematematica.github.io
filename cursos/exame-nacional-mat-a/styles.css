@@ -1,6 +1,5 @@
-/* ================================
-   VARIABLES (DESIGN SYSTEM)
-================================ */
+/* Cor do curso de Exame Nacional de Matemática A.
+   (#1fa689 tinha contraste 3.05:1 com branco; #0f766e tem 5.47:1) */
 :root {
-  --secondary: #1fa689;
+  --secondary: #0f766e;
 }

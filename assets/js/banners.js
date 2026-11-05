@@ -1,114 +1,93 @@
+/* =========================================================
+   Banners promocionais próprios (não são anúncios AdSense).
+   - Sidebars dos artigos: #ad-left / #ad-right (escolha aleatória)
+   - Carrossel do topo: .carousel .track (atualmente desativado no HTML)
+   Dados por defeito em /assets/data/ads-default.js (window.DEFAULT_ADS);
+   uma página pode sobrepor com window.PAGE_ADS.
+   ========================================================= */
+document.addEventListener('DOMContentLoaded', function () {
+  'use strict';
 
-document.addEventListener("DOMContentLoaded", function () {
+  var global = window.DEFAULT_ADS || {};
+  var page = window.PAGE_ADS || {};
 
-  const global = window.DEFAULT_ADS || {};
-  const page = window.PAGE_ADS || {};
-
-  const topAds = (page.top && page.top.length)
-    ? page.top
-    : (global.top || {});
-
-  try {
-    const track = document.querySelector(".track");
-      
-    track.innerHTML = topAds.map(ad => `
-      <div class="slide">
-        <a href="${ad.href}">
-          <img src="${ad.img}" alt="${ad.alt || ''}">
-        </a>
-        ${ad.desc ? `<div class="description">${ad.desc}</div>` : ""}
-      </div>
-    `).join("");
-
-    const slides = document.querySelectorAll(".slide");
-    const nextBtn = document.getElementById("next");
-    const prevBtn = document.getElementById("prev");
-    const carousel = document.querySelector(".carousel");
-
-    let index = 0;
-    let interval = null;
-
-    function updateSlide() {
-      track.style.transform = `translateX(-${index * 100}%)`;
-    }
-
-    function nextSlide() {
-      index = (index + 1) % slides.length;
-      updateSlide();
-    }
-
-    function prevSlide() {
-      index = (index - 1 + slides.length) % slides.length;
-      updateSlide();
-    }
-
-    function startAuto() {
-      clearInterval(interval);
-      interval = setInterval(nextSlide, 5000);
-    }
-
-    function stopAuto() {
-      clearInterval(interval);
-    }
-
-    nextBtn.addEventListener("click", nextSlide);
-    prevBtn.addEventListener("click", prevSlide);
-
-    carousel.addEventListener("mouseenter", stopAuto);
-    carousel.addEventListener("mouseleave", startAuto);
-
-    startAuto();
-  } catch (error) {};
-
-  // =========================
-  // ⬅ LEFT (page override > global)
-  // =========================
-  function pickRandom(list) { 
-    if (!list || !list.length) return null; 
-    return list[Math.floor(Math.random() * list.length)]; 
+  function pick(name) {
+    return (page[name] && page[name].length) ? page[name] : (global[name] || []);
   }
-  
-  const leftAds = (page.left && page.left.length)
-    ? page.left
-    : (global.left || {});
 
-  try {
-    const leftAd = pickRandom(leftAds);
-    const leftBox = document.getElementById("ad-left");
+  function pickRandom(list) {
+    if (!list || !list.length) return null;
+    return list[Math.floor(Math.random() * list.length)];
+  }
 
-    if (leftBox && leftAd) {
-      leftBox.innerHTML = `
-      <div class="ad-banner">
-        <a href="${leftAd.href}">
-          <img src="${leftAd.img}" alt="${leftAd.alt || ''}">
-        </a>
-        ${leftAd.desc ? `<div class="description">${leftAd.desc}</div>` : ""}
-        </div>
-      `;
+  /* Cria o HTML de um banner com elementos DOM (sem innerHTML de dados) */
+  function buildBanner(ad, className) {
+    var wrap = document.createElement('div');
+    wrap.className = className;
+
+    var link = document.createElement('a');
+    link.href = ad.href;
+
+    var img = document.createElement('img');
+    img.src = ad.img;
+    img.alt = ad.alt || '';
+    img.loading = 'lazy';
+    img.decoding = 'async';
+    if (ad.width) img.width = ad.width;
+    if (ad.height) img.height = ad.height;
+
+    link.appendChild(img);
+    wrap.appendChild(link);
+
+    if (ad.desc) {
+      var desc = document.createElement('div');
+      desc.className = 'description';
+      desc.textContent = ad.desc;
+      wrap.appendChild(desc);
     }
-  } catch (error) {};
+    return wrap;
+  }
 
-  // =========================
-  // ➡ RIGHT (page override > global)
-  // =========================
-  const rightAds = (page.right && page.right.length)
-    ? page.right
-    : (global.right || {});
+  /* ---------- Carrossel (só corre se existir no HTML) ---------- */
+  var track = document.querySelector('.carousel .track');
+  var topAds = pick('top');
 
-  try {
-    const rightAd = pickRandom(rightAds);
-    const rightBox = document.getElementById("ad-right");
+  if (track && topAds.length) {
+    topAds.forEach(function (ad) { track.appendChild(buildBanner(ad, 'slide')); });
 
-    if (rightBox && rightAd) {
-      rightBox.innerHTML = `
-      <div class="ad-banner">
-        <a href="${rightAd.href}">
-          <img src="${rightAd.img}" alt="${rightAd.alt || ''}">
-        </a>
-        ${rightAd.desc ? `<div class="description">${rightAd.desc}</div>` : ""}
-      </div>
-      `;
-    }
-  } catch (error) {};
+    var carousel = track.closest('.carousel');
+    var slides = track.querySelectorAll('.slide');
+    var index = 0;
+    var timer = null;
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+    var go = function (step) {
+      index = (index + step + slides.length) % slides.length;
+      track.style.transform = 'translateX(-' + index * 100 + '%)';
+    };
+    var start = function () {
+      if (reduceMotion || slides.length < 2) return;
+      clearInterval(timer);
+      timer = setInterval(function () { go(1); }, 5000);
+    };
+    var stop = function () { clearInterval(timer); };
+
+    var next = document.getElementById('next');
+    var prev = document.getElementById('prev');
+    if (next) next.addEventListener('click', function () { go(1); });
+    if (prev) prev.addEventListener('click', function () { go(-1); });
+
+    carousel.addEventListener('mouseenter', stop);
+    carousel.addEventListener('mouseleave', start);
+    carousel.addEventListener('focusin', stop);
+    carousel.addEventListener('focusout', start);
+    start();
+  }
+
+  /* ---------- Sidebars ---------- */
+  [['left', 'ad-left'], ['right', 'ad-right']].forEach(function (pair) {
+    var box = document.getElementById(pair[1]);
+    var ad = pickRandom(pick(pair[0]));
+    if (box && ad) box.appendChild(buildBanner(ad, 'ad-banner'));
+  });
 });

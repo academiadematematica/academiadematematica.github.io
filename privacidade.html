@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <!--
+    MODELO - REVER ANTES DE PUBLICAR.
+    Texto redigido como ponto de partida; não substitui aconselhamento jurídico.
+    Confirmar sobretudo: identificação do responsável (nome/NIF), prazo de conservação
+    e a lista de serviços externos usados.
+  -->
+  <title>Política de Privacidade | Academia de Matemática</title>
+  <meta name="description" content="Como a Academia de Matemática recolhe, usa e protege os dados pessoais enviados através do site.">
+  <link rel="canonical" href="https://academiadematematica.github.io/privacidade.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Política de Privacidade | Academia de Matemática">
+  <meta property="og:description" content="Como recolhemos, usamos e protegemos os teus dados pessoais.">
+  <meta property="og:url" content="https://academiadematematica.github.io/privacidade.html">
+
+  <!-- ====================================================
+       HEAD COMUM - páginas do site principal
+       (título, descrição, canonical e og:title/og:description/og:url/og:type
+        são definidos em cada página, antes deste bloco)
+  ===================================================== -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173966">
+
+  <!-- Verificação AdSense (meta tag em vez do script: não pesa no carregamento).
+       Quando a conta for aprovada, ver o README em CHANGELOG.md antes de ativar anúncios. -->
+  <meta name="google-adsense-account" content="ca-pub-2435759311788843">
+
+  <link rel="icon" type="image/png" href="/assets/img/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+
+  <!-- Open Graph / Twitter (comum) -->
+  <meta property="og:site_name" content="Academia de Matemática">
+  <meta property="og:locale" content="pt_PT">
+  <meta property="og:image" content="https://academiadematematica.github.io/assets/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Academia de Matemática - explicações e cursos de Matemática online">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Fontes: Montserrat só para títulos; o texto usa as fontes do sistema -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap">
+
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <script defer src="/assets/js/nav.js"></script>
+
+  <!-- Dados estruturados da organização -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "@id": "https://academiadematematica.github.io/#organizacao",
+    "name": "Academia de Matemática",
+    "url": "https://academiadematematica.github.io/",
+    "logo": "https://academiadematematica.github.io/assets/img/SqrLogo.png",
+    "description": "Explicações e cursos de Matemática online para o ensino secundário, ensino superior e prova de acesso Maiores de 23.",
+    "email": "academiadematematicamo@gmail.com",
+    "telephone": "+351967816939",
+    "founder": { "@type": "Person", "name": "Miguel Oliveira" },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Guimarães",
+      "addressRegion": "Braga",
+      "addressCountry": "PT"
+    },
+    "areaServed": { "@type": "Country", "name": "Portugal" }
+  }
+  </script>
+
+</head>
+
+<body>
+
+  <a class="skip-link" href="#conteudo">Saltar para o conteúdo</a>
+
+
+  <!-- =======================
+      CABEÇALHO + NAVEGAÇÃO
+      (o comportamento mobile/teclado está em /assets/js/nav.js;
+       sem JavaScript o menu fica sempre visível)
+  ======================== -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+
+      <a class="brand" href="/">
+        <picture>
+          <source srcset="/assets/img/logo-header.webp" type="image/webp">
+          <img src="/assets/img/logo-header.png" alt="Academia de Matemática - página inicial" width="155" height="56">
+        </picture>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" hidden>
+        <svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#menu"></use></svg>
+        <span class="nav-toggle__label">Menu</span>
+      </button>
+
+      <nav id="site-nav" class="site-nav" aria-label="Principal">
+        <ul class="site-nav__list">
+          <li><a href="/">Início</a></li>
+
+          <li class="has-sub">
+            <a href="/explicacoes/">Explicações</a>
+            <button class="sub-toggle" type="button" aria-expanded="false" aria-controls="sub-explicacoes">
+              <svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#chevron-down"></use></svg>
+              <span class="sr-only">Mostrar submenu Explicações</span>
+            </button>
+            <ul id="sub-explicacoes" class="sub-menu">
+              <li><a href="/explicacoes/secundario.html">Ensino Secundário</a></li>
+              <li><a href="/explicacoes/universidade.html">Ensino Superior</a></li>
+              <li><a href="/explicacoes/maiores-de-23.html">Maiores de 23</a></li>
+              <li><a href="/explicacoes/precos.html">Preços</a></li>
+              <li><a href="/explicacoes/faq.html">Perguntas frequentes</a></li>
+            </ul>
+          </li>
+
+          <li class="has-sub">
+            <a href="/cursos/">Cursos</a>
+            <button class="sub-toggle" type="button" aria-expanded="false" aria-controls="sub-cursos">
+              <svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#chevron-down"></use></svg>
+              <span class="sr-only">Mostrar submenu Cursos</span>
+            </button>
+            <ul id="sub-cursos" class="sub-menu">
+              <li><a href="/cursos/curso-m23/">Maiores de 23</a></li>
+              <li><a href="/cursos/exame-nacional-mat-a/">Exame Nacional de Matemática A</a></li>
+            </ul>
+          </li>
+
+          <li><a href="/conteudos/blog/">Blog</a></li>
+          <!-- soon <li><a href="/loja/">Loja</a></li> -->
+          <li><a href="/contacto.html">Contacto</a></li>
+          <li class="site-nav__cta"><a class="btn btn--primary btn--sm" href="/explicacoes/marcar.html">Marcar explicação</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+
+<main id="conteudo">
+
+  <section class="page-hero">
+    <div class="container container--narrow">
+      <h1>Política de privacidade</h1>
+      <p class="lead">Que dados pessoais recolhemos através deste site, para quê e quais são os teus direitos.</p>
+      <p class="small muted">Última atualização: 4 de novembro de 2026</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container container--narrow">
+      <div class="prose" style="max-width: none;">
+
+        <h2>1. Responsável pelo tratamento</h2>
+        <p>
+          O responsável pelo tratamento dos dados é Miguel Oliveira, que presta serviços sob a designação
+          <strong>Academia de Matemática</strong>.<br>
+          Contacto: <a href="mailto:academiadematematicamo@gmail.com">academiadematematicamo@gmail.com</a>
+          · <a href="tel:+351967816939">+351 967 816 939</a>.
+        </p>
+
+        <h2>2. Que dados recolhemos</h2>
+        <p>Só recolhemos os dados que nos envias voluntariamente através dos formulários do site:</p>
+        <ul>
+          <li><strong>Contacto:</strong> nome, email e mensagem.</li>
+          <li><strong>Marcação de explicação:</strong> nome, email, telefone, nível de ensino, área ou ano e mensagem.</li>
+          <li><strong>Pré-inscrição em cursos:</strong> nome, email, telefone, habilitações académicas e objetivo.</li>
+          <li><strong>Lista de interesse de cursos:</strong> nome, email e, opcionalmente, ano de escolaridade.</li>
+        </ul>
+        <p>
+          Não pedimos dados sensíveis. Se o pedido disser respeito a um aluno menor de idade,
+          pedimos que o contacto seja feito pelo encarregado de educação.
+        </p>
+
+        <h2>3. Para que usamos os dados</h2>
+        <ul>
+          <li>
+            Responder a pedidos de informação, marcar explicações e tratar pré-inscrições: tratamento necessário
+            para diligências pré-contratuais a teu pedido (artigo 6.º, n.º 1, alínea b) do RGPD).
+          </li>
+          <li>
+            Avisar-te quando abrirem inscrições num curso, se te registaste na lista de interesse,
+            com base no teu consentimento (artigo 6.º, n.º 1, alínea a) do RGPD), que podes retirar a qualquer momento.
+          </li>
+        </ul>
+        <p>Não vendemos nem cedemos os teus dados a terceiros para fins de marketing.</p>
+
+        <h2>4. Serviços externos utilizados</h2>
+        <p>Para o site funcionar, recorremos aos seguintes prestadores, que podem tratar dados em nosso nome:</p>
+        <ul>
+          <li><strong>Formspree</strong>: receção e encaminhamento dos formulários. A empresa está sediada nos Estados Unidos, pelo que os dados podem ser transferidos para fora da União Europeia.</li>
+          <li><strong>Google (Gmail)</strong>: receção das mensagens por email.</li>
+          <li><strong>GitHub Pages</strong>: alojamento do site; como qualquer servidor, regista dados técnicos de acesso (por exemplo, o endereço IP).</li>
+          <li><strong>Google Fonts</strong> e <strong>jsDelivr</strong>: fornecimento de tipos de letra e da biblioteca de fórmulas matemáticas; o teu navegador liga-se a estes serviços e transmite o endereço IP.</li>
+          <li><strong>Hotmart</strong>: pagamento de produtos digitais (apenas se decidires comprar; os dados de pagamento são tratados diretamente pela Hotmart).</li>
+        </ul>
+        <p>Cada um destes serviços tem a sua própria política de privacidade.</p>
+
+        <h2>5. Cookies</h2>
+        <p>
+          Este site não utiliza cookies próprios nem ferramentas de estatística ou publicidade.
+          Se isso mudar, esta política será atualizada e será pedido o teu consentimento quando a lei o exigir.
+        </p>
+
+        <h2>6. Durante quanto tempo guardamos os dados</h2>
+        <p>
+          Os pedidos que não resultem em explicações ou inscrição são apagados no prazo máximo de 12 meses.
+          Se te tornares aluno, os dados são conservados enquanto durar o acompanhamento e, depois, apenas
+          pelo tempo exigido por obrigações legais (por exemplo, fiscais).
+        </p>
+
+        <h2>7. Testemunhos</h2>
+        <p>
+          Só publicamos testemunhos de alunos com a sua autorização. Podes pedir a qualquer momento
+          a alteração ou remoção de um testemunho teu.
+        </p>
+
+        <h2>8. Os teus direitos</h2>
+        <p>
+          Podes pedir o acesso, a retificação, o apagamento, a limitação ou a portabilidade dos teus dados,
+          opor-te ao tratamento e retirar o consentimento, escrevendo para
+          <a href="mailto:academiadematematicamo@gmail.com">academiadematematicamo@gmail.com</a>.
+        </p>
+        <p>
+          Tens ainda o direito de apresentar reclamação à Comissão Nacional de Proteção de Dados
+          (<a href="https://www.cnpd.pt" rel="noopener">www.cnpd.pt</a>).
+        </p>
+
+        <h2>9. Alterações</h2>
+        <p>Esta política pode ser atualizada. A data da última alteração está indicada no topo da página.</p>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__grid">
+
+      <div class="site-footer__about">
+        <p class="site-footer__title">Academia de Matemática</p>
+        <p>Explicações e cursos de Matemática online, do ensino secundário ao ensino superior.</p>
+        <ul class="site-footer__contact">
+          <li>
+            <svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#mail"></use></svg>
+            <a href="mailto:academiadematematicamo@gmail.com">academiadematematicamo@gmail.com</a>
+          </li>
+          <li>
+            <svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#phone"></use></svg>
+            <a href="tel:+351967816939">+351 967 816 939</a>
+          </li>
+        </ul>
+      </div>
+
+      <nav class="site-footer__nav" aria-label="Rodapé - explicações">
+        <p class="site-footer__title">Explicações</p>
+        <ul>
+          <li><a href="/explicacoes/secundario.html">Ensino Secundário</a></li>
+          <li><a href="/explicacoes/universidade.html">Ensino Superior</a></li>
+          <li><a href="/explicacoes/maiores-de-23.html">Maiores de 23</a></li>
+          <li><a href="/explicacoes/precos.html">Preços</a></li>
+          <li><a href="/explicacoes/faq.html">Perguntas frequentes</a></li>
+        </ul>
+      </nav>
+
+      <nav class="site-footer__nav" aria-label="Rodapé - academia">
+        <p class="site-footer__title">Academia</p>
+        <ul>
+          <li><a href="/cursos/">Cursos</a></li>
+          <li><a href="/conteudos/">Conteúdos gratuitos</a></li>
+          <li><a href="/conteudos/blog/">Blog</a></li>
+          <li><a href="/contacto.html">Contacto</a></li>
+          <li><a href="/privacidade.html">Política de privacidade</a></li>
+        </ul>
+      </nav>
+
+    </div>
+
+    <div class="container site-footer__bottom">
+      <p>© <span data-year>2026</span> Academia de Matemática · Miguel Oliveira</p>
+    </div>
+  </footer>
+
+
+</body>
+</html>
