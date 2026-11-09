@@ -488,6 +488,15 @@ strong {
   text-underline-offset: 0.35em;
 }
 
+.site-nav .btn { white-space: nowrap; }
+
+/* entre 960 e 1100 px o menu fica apertado: menos espaço entre itens */
+@media (min-width: 960px) and (max-width: 1099.98px) {
+  .site-nav__list > li > a:not(.btn) { padding-inline: var(--s-2) !important; }
+  .site-nav__cta { margin-left: var(--s-1) !important; }
+  .brand img { width: 130px; height: auto; }
+}
+
 .site-nav .btn,
 .site-nav .btn:hover {
   color: #fff;
@@ -1918,3 +1927,63 @@ ol.opcoes li { margin: 0; }
   .resolucao summary { display: none !important; }
   .exercicio { box-shadow: none; break-inside: avoid; }
 }
+
+/* =========================================================
+   20. LOJA (/loja/)
+   ========================================================= */
+.loja-garantias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2) var(--s-5);
+  list-style: none;
+  margin: var(--s-5) 0 0;
+  padding: 0;
+  font-size: var(--fs-sm);
+  color: var(--muted);
+}
+
+.loja-garantias li {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  margin: 0;
+}
+
+.loja-garantias .icon { color: var(--success); }
+
+.produto { padding-top: var(--s-4); }
+
+.produto--destaque { border: 2px solid var(--action); }
+
+.produto__selo {
+  position: absolute;
+  top: calc(-1 * var(--s-3));
+  right: var(--s-4);
+  z-index: 1;
+  box-shadow: var(--shadow-sm);
+}
+
+.produto__img {
+  display: block;
+  margin: 0 0 var(--s-4);
+  border-radius: var(--radius);
+  overflow: hidden;
+  aspect-ratio: 3 / 2;
+  background: var(--bg);
+}
+
+.produto__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.produto__preco {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s-2);
+  margin-top: auto;
+  margin-bottom: 0;
+}
+
+.produto__preco s { font-size: var(--fs-sm); }
